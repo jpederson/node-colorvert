@@ -1,0 +1,29 @@
+{
+  "name": "colorvert",
+  "version": "0.0.0",
+  "description": "Color conversion JSON API",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jpederson/colorvert.git"
+  },
+  "keywords": [
+    "color",
+    "conversion",
+    "JSON",
+    "API",
+    "node",
+    "little",
+    "cms"
+  ],
+  "author": "James Pederson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpederson/colorvert/issues"
+  },
+  "homepage": "https://github.com/jpederson/colorvert",
+  "dependencies": {
+    "express": "~4.4.0",
+    "colorspaces": "~0.1.4"
+  }
+}
