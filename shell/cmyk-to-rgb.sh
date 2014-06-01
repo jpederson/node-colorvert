@@ -1,1 +1,0 @@
-echo "$1\n$2\n$3\n$4\n" | transicc -i profile/cmyk.icc -o profile/rgb.icc -n

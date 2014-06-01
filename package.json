@@ -2,7 +2,7 @@
   "name": "colorvert",
   "version": "0.0.0",
   "description": "Color conversion JSON API",
-  "main": "server.js",
+  "main": "colorvert.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/jpederson/colorvert.git"
@@ -24,6 +24,6 @@
   "homepage": "https://github.com/jpederson/colorvert",
   "dependencies": {
     "express": "~4.4.0",
-    "colorspaces": "~0.1.4"
+    "colorspaces": "~0.1.4",
   }
 }
