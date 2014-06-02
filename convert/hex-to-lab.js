@@ -1,0 +1,22 @@
+
+
+var hex_to_rgb = require( "./hex-to-rgb" ),
+	rgb_to_hsv = require( "./rgb-to-hsv" );
+
+
+// conver a hex color to RGB
+module.exports = function( hex, callback ){
+
+    // convert hex to RGB
+    var rgb = hex_to_rgb( hex );
+
+    // then RGB to Lab
+    rgb_to_lab( rgb.r, rgb.g, rgb.b, function( lab ){
+
+    	// pass it into the callback function
+    	callback( lab );
+
+    });
+
+}
+

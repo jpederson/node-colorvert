@@ -1,6 +1,7 @@
 
 
 function hue_to_rgb( p, q, t ){
+
     if ( t < 0 ) {
         t += 1;
     }
@@ -17,6 +18,7 @@ function hue_to_rgb( p, q, t ){
         return p + (q - p) * (2/3 - t) * 6;
     }
     return p;
+    
 }
 
 
