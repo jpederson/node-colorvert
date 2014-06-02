@@ -13,8 +13,7 @@
     "JSON",
     "API",
     "node",
-    "little",
-    "cms"
+    "LittleCMS"
   ],
   "author": "James Pederson",
   "license": "MIT",

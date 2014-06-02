@@ -4,7 +4,8 @@ var cmyk_to_rgb  = require( "./rgb" ),
 	cmyk_to_xyz  = require( "./xyz" ),
 	cmyk_to_lab  = require( "./lab" ),
 	rgb_to_hex  = require( "../rgb/hex" ),
-	rgb_to_hsl  = require( "../rgb/hsl" );
+	rgb_to_hsl  = require( "../rgb/hsl" ),
+	rgb_to_hsv  = require( "../rgb/hsv" );
 
 
 // convert HSV to all other color formats
