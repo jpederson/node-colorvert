@@ -24,6 +24,16 @@
   "homepage": "https://github.com/jpederson/colorvert",
   "dependencies": {
     "express": "~4.4.0",
+    "grunt": "^0.4.5",
     "transicc": "~1.0.2"
+  },
+  "devDependencies" : {
+    "grunt" :                       "latest",
+    "grunt-contrib-cssmin":         "*",
+    "grunt-contrib-sass":           "*",
+    "grunt-contrib-uglify":         "*",
+    "grunt-contrib-watch":          "*",
+    "grunt-release":                "*",
+    "matchdep":                     "*"
   }
 }
