@@ -9,7 +9,7 @@ module.exports = function( req, res ){
 
 	// parse the URL for a format request
 	var url_parts = req.url.substring( 1 ).split( "/" );
-		hex = parseFloat( url_parts[1] );
+		hex = url_parts[1];
 	
 
 	// convert to rgb using transicc

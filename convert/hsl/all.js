@@ -5,7 +5,7 @@ var hsl_to_rgb  = require( "./rgb" ),
 	rgb_to_xyz  = require( "../rgb/xyz" ),
 	rgb_to_lab  = require( "../rgb/lab" ),
 	rgb_to_hex  = require( "../rgb/hex" ),
-	rgb_to_hsl  = require( "../rgb/hsl" );
+	rgb_to_hsv  = require( "../rgb/hsv" );
 
 
 // convert HSV to all other color formats
