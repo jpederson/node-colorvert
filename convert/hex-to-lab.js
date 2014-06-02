@@ -4,7 +4,7 @@ var hex_to_rgb = require( "./hex-to-rgb" ),
 	rgb_to_hsv = require( "./rgb-to-hsv" );
 
 
-// conver a hex color to RGB
+// convert a hex color to Lab
 module.exports = function( hex, callback ){
 
     // convert hex to RGB

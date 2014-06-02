@@ -1,5 +1,6 @@
 
 
+// convert HSL to HSV
 module.exports = function( h, s, l ){
     
     s *= l < .5 ? l : 1 - l;

@@ -1,5 +1,6 @@
 
 
+// convert a hue to RGB
 function hue_to_rgb( p, q, t ){
 
     if ( t < 0 ) {
@@ -52,3 +53,4 @@ module.exports = function( h, s, l ){
     };
 
 }
+
