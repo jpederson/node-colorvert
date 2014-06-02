@@ -9,32 +9,29 @@ var rgb_to_cmyk = require( "./cmyk" ),
 
 
 // convert HSV to all other color formats
-module.exports = function( h, s, v, callback ){
-
-	// convert to RGB first
-	var rgb = hsv_to_rgb( h, s, v );
+module.exports = function( r, g, b, callback ){
 
 	// convert to CMYK using transicc
-	rgb_to_cmyk( rgb.r, rgb.g, rgb.b, function( cmyk ){
+	rgb_to_cmyk( r, g, b, function( cmyk ){
 
 		// convert to XYZ using transicc
-		rgb_to_xyz( rgb.r, rgb.g, rgb.b, function( xyz ){
+		rgb_to_xyz( r, g, b, function( xyz ){
 
 			// convert to Lab using transicc
-			rgb_to_lab( rgb.r, rgb.g, rgb.b, function( lab ){
+			rgb_to_lab( r, g, b, function( lab ){
 
 				// build the response object
 				var response = {
 					"cmyk": cmyk,
 					"lab": lab,
-					"hex": rgb_to_hex( rgb.r, rgb.g, rgb.b ),
-					"hsl": rgb_to_hsl( rgb.r, rgb.g, rgb.b ),
-					"hsv": {
-						"h": h,
-						"s": s,
-						"v": v
+					"hex": rgb_to_hex( r, g, b ),
+					"hsl": rgb_to_hsl( r, g, b ),
+					"hsv": rgb_to_hsv( r, g, b ),
+					"rgb": {
+						"r": r,
+						"g": g,
+						"b": b
 					},
-					"rgb": rgb,
 					"xyz": xyz
 				};
 
