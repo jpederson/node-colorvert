@@ -1,8 +1,12 @@
 
 
 // CMYK
-exports.cmyk_to_rgb = require( "./convert/cmyk-to-rgb" );
+exports.cmyk_to_hex = require( "./convert/cmyk-to-hex" );
+exports.cmyk_to_hsl = require( "./convert/cmyk-to-hsl" );
+exports.cmyk_to_hsv = require( "./convert/cmyk-to-hsv" );
 exports.cmyk_to_lab = require( "./convert/cmyk-to-lab" );
+exports.cmyk_to_rgb = require( "./convert/cmyk-to-rgb" );
+exports.cmyk_to_xyz = require( "./convert/cmyk-to-xyz" );
 
 
 // Hex
@@ -15,8 +19,12 @@ exports.hex_to_xyz  = require( "./convert/hex-to-xyz" );
 
 
 // HSL
+exports.hsl_to_cmyk = require( "./convert/hsl-to-cmyk" );
+exports.hsl_to_hex  = require( "./convert/hsl-to-hex" );
 exports.hsl_to_hsv  = require( "./convert/hsl-to-hsv" );
+exports.hsl_to_lab  = require( "./convert/hsl-to-lab" );
 exports.hsl_to_rgb  = require( "./convert/hsl-to-rgb" );
+exports.hsl_to_xyz  = require( "./convert/hsl-to-xyz" );
 
 
 // HSL
