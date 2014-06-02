@@ -7,14 +7,14 @@ var transicc = require( "transicc" );
 module.exports = function( r, g, b, callback ){
 
 	// initiate the command, and an empty response object
-	transicc( "rgb", "cmyk", [ r, g, b ], function( cmyk ){
+	transicc( "rgb", "lab", [ r, g, b ], function( lab ){
 
 		// construct a response
 		var response = {
-			"c": Math.round( cmyk[0] ),
-			"m": Math.round( cmyk[1] ),
-			"y": Math.round( cmyk[2] ),
-			"k": Math.round( cmyk[3] )
+			"c": Math.round( lab[0] ),
+			"m": Math.round( lab[1] ),
+			"y": Math.round( lab[2] ),
+			"k": Math.round( lab[3] )
 		};
 		
 		// feed it into the callback

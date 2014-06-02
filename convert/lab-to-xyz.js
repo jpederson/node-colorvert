@@ -7,7 +7,7 @@ var transicc = require( "transicc" );
 module.exports = function( l, a, b, callback ){
 
 	// initiate the command, and an empty response object
-	transicc( "lab", "xyz", [ l, a, b ], function( xyz ){
+	transicc( "lab", "xyz-d65", [ l, a, b ], function( xyz ){
 
 		// construct a response
 		var response = {

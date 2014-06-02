@@ -4,7 +4,7 @@ var hsl_to_rgb = require( "./hsl-to-rgb" ),
 	rgb_to_xyz = require( "./rgb-to-xyz" );
 
 
-// conver a HSL color to XYZ
+// convert HSL to XYZ
 module.exports = function( h, s, l, callback ){
 
     // convert HSL to RGB
