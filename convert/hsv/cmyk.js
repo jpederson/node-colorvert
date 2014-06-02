@@ -1,7 +1,7 @@
 
 
-var hsv_to_rgb = require( "./hsv-to-rgb" ),
-	rgb_to_lab = require( "./rgb-to-lab" );
+var hsv_to_rgb = require( "./rgb" ),
+	rgb_to_cmyk = require( "../rgb/cmyk" );
 
 
 // conver a hex color to RGB
@@ -10,11 +10,11 @@ module.exports = function( h, s, v, callback ){
     // convert hex to RGB
     var rgb = hsv_to_rgb( h, s, v );
 
-    // then RGB to Lab
-    rgb_to_lab( rgb.r, rgb.g, rgb.b, function( lab ){
+    // then RGB to CMYK
+    rgb_to_cmyk( rgb.r, rgb.g, rgb.b, function( cmyk ){
 
     	// pass it into the callback function
-    	callback( lab );
+    	callback( cmyk );
 
     });
 

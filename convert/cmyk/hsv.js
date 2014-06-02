@@ -1,7 +1,7 @@
 
 
-var cmyk_to_rgb = require( "./cmyk-to-rgb" ),
-	rgb_to_hsv = require( "./rgb-to-hsv" );
+var cmyk_to_rgb = require( "./rgb" ),
+	rgb_to_hsv  = require( "../rgb/hsv" );
 
 
 // convert from CMYK to RGB using transicc

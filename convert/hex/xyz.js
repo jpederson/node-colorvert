@@ -1,7 +1,7 @@
 
 
-var hex_to_rgb = require( "./hex-to-rgb" ),
-	rgb_to_xyz = require( "./rgb-to-xyz" );
+var hex_to_rgb = require( "./rgb" ),
+	rgb_to_xyz = require( "../rgb/xyz" );
 
 
 // convert a hex color to XYZ

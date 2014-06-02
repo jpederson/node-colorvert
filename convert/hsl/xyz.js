@@ -1,7 +1,7 @@
 
 
-var hsl_to_rgb = require( "./hsl-to-rgb" ),
-	rgb_to_xyz = require( "./rgb-to-xyz" );
+var hsl_to_rgb = require( "./rgb" ),
+	rgb_to_xyz = require( "../rgb/xyz" );
 
 
 // convert HSL to XYZ

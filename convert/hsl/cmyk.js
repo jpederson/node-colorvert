@@ -1,7 +1,7 @@
 
 
-var hsl_to_rgb = require( "./hsl-to-rgb" ),
-	rgb_to_cmyk = require( "./rgb-to-cmyk" );
+var hsl_to_rgb = require( "./rgb" ),
+	rgb_to_cmyk = require( "../rgb/cmyk" );
 
 
 // conver a hex color to CMYK

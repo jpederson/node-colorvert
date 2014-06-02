@@ -9,16 +9,13 @@ var express = require( "express" ),
 app.use( express.static( __dirname + '/public' ) );
 
 
-// cmyk endpoint
+// handle API requests
 app.get( '/cmyk/*', require( "./api/cmyk" ) );
-
-
-// lab endpoint
-app.get( '/lab/*', require( "./api/lab" ) );
-
-
-// lab endpoint
+app.get( '/hex/*', require( "./api/hex" ) );
+app.get( '/hsl/*', require( "./api/hsl" ) );
 app.get( '/hsv/*', require( "./api/hsv" ) );
+app.get( '/lab/*', require( "./api/lab" ) );
+app.get( '/rgb/*', require( "./api/rgb" ) );
 
 
 // catch-all invalid endpoint response

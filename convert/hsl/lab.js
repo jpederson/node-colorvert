@@ -1,7 +1,7 @@
 
 
-var hsl_to_rgb = require( "./hsl-to-rgb" ),
-	rgb_to_lab = require( "./rgb-to-lab" );
+var hsl_to_rgb = require( "./rgb" ),
+	rgb_to_lab = require( "../rgb/lab" );
 
 
 // convert HSL to Lab

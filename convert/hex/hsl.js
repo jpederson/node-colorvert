@@ -1,7 +1,7 @@
 
 
-var hex_to_rgb = require( "./hex-to-rgb" ),
-	rgb_to_hsl = require( "./rgb-to-hsl" );
+var hex_to_rgb = require( "./rgb" ),
+	rgb_to_hsl = require( "../rgb/hsl" );
 
 
 // convert hex to HSL

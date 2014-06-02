@@ -1,7 +1,7 @@
 
 
-var hsv_to_rgb = require( "./hsv-to-rgb" ),
-	rgb_to_hex = require( "./rgb-to-hex" );
+var hsv_to_rgb = require( "./rgb" ),
+	rgb_to_hex = require( "../rgb/hex" );
 
 
 // convert a HSV to RGB
