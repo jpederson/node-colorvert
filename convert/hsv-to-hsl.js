@@ -1,6 +1,6 @@
 
 
-// conver HSV values to HSL
+// convert HSV to HSL
 module.exports = function( h, s, v ){
     
     return {
