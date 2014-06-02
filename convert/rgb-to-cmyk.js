@@ -1,36 +1,23 @@
 
 
-var spawn = require( "child_process" ).spawn;
+var transicc = require( "transicc" );
 
 
 // convert from CMYK to RGB using transicc
 module.exports = function( r, g, b, callback ){
 
 	// initiate the command, and an empty response object
-	var cmd = spawn( "./shell/3.sh", [ "rgb.icc", "cmyk.icc", r, g, b ] ),
-		response = {};
+	transicc( "rgb", "cmyk", [ r, g, b ], function( cmyk ){
 
-
-	// when we receive output from the command
-	cmd.stdout.on( 'data', function ( data ) {
-
-		// parse the output
-		var data_parts = new String( data ).split( " " );
-
-		// populate the values into our response
-		response["c"] = Math.round( data_parts[0] );
-		response["m"] = Math.round( data_parts[1] );
-		response["y"] = Math.round( data_parts[2] );
-		response["k"] = Math.round( data_parts[3] );
-	
-	});
-
-
-	// once the command is finished
-	cmd.on( 'close', function ( code ) {
+		// construct a response
+		var response = {
+			"c": Math.round( cmyk[0] ),
+			"m": Math.round( cmyk[1] ),
+			"y": Math.round( cmyk[2] ),
+			"k": Math.round( cmyk[3] )
+		};
 		
-		// since we're working asynchronously, we can't return
-		// so we'll pass our response into a callback function.
+		// feed it into the callback
 		callback( response );
 
 	});

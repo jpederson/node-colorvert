@@ -24,6 +24,6 @@
   "homepage": "https://github.com/jpederson/colorvert",
   "dependencies": {
     "express": "~4.4.0",
-    "colorspaces": "~0.1.4",
+    "transicc": "~1.0.2"
   }
 }

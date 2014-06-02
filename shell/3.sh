@@ -1,1 +1,0 @@
-echo "$3\n$4\n$5\n" | transicc -i $1 -o $2 -n
