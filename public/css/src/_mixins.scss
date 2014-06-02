@@ -1,0 +1,24 @@
+
+// responsive mixin
+@mixin respond-to( $breakpoint ) {
+    @media only screen and (min-width: $breakpoint) { @content; }
+}
+
+
+// Clearfix mixin
+@mixin clearfix {
+	zoom: 1;
+
+	&:before, &:after { 
+		content: ""; 
+		display: table;
+	}
+
+	&:after { clear: both; }
+}
+
+.clearfix, .group {
+	@include clearfix;
+}
+
+
