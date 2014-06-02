@@ -11,33 +11,35 @@ module.exports = function( req, res ){
 	// parse the URL for a format request
 	var url_parts = req.url.substring( 1 ).split( "/" );
 		format = url_parts[0],
-		c = url_parts[1],
-		m = url_parts[2],
-		y = url_parts[3],
-		k = url_parts[4];
+		h = parseFloat( url_parts[1] ),
+		s = parseFloat( url_parts[2] ),
+		v = parseFloat( url_parts[3] );
 	
 
-	// convert to lab using transicc
-	cvert.cmyk_to_lab( c, m, y, k, function( lab ){
+	// convert to RGB first
+	var rgb = cvert.hsv_to_rgb( h, s, v );
+
+
+	// convert to CMYK using transicc
+	cvert.rgb_to_cmyk( rgb.r, rgb.g, rgb.b, function( cmyk ){
 
 		// convert to XYZ using transicc
-		cvert.cmyk_to_xyz( c, m, y, k, function( xyz ){
+		cvert.rgb_to_xyz( rgb.r, rgb.g, rgb.b, function( xyz ){
 
-			// convert to RGB using transicc
-			cvert.cmyk_to_rgb( c, m, y, k, function( rgb ){
+			// convert to Lab using transicc
+			cvert.rgb_to_lab( rgb.r, rgb.g, rgb.b, function( lab ){
 
 				// build the response object
 				var response = {
-					"cmyk": {
-						"c": c,
-						"m": m,
-						"y": y,
-						"k": k
-					},
+					"cmyk": cmyk,
 					"lab": lab,
 					"hex": cvert.rgb_to_hex( rgb.r, rgb.g, rgb.b ),
 					"hsl": cvert.rgb_to_hsl( rgb.r, rgb.g, rgb.b ),
-					"hsv": cvert.rgb_to_hsv( rgb.r, rgb.g, rgb.b ),
+					"hsv": {
+						"h": h,
+						"s": s,
+						"v": v
+					},
 					"rgb": rgb,
 					"xyz": xyz
 				};
@@ -50,6 +52,7 @@ module.exports = function( req, res ){
 		});
 
 	});
+
 
 };
 

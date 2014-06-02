@@ -17,6 +17,10 @@ app.get( '/cmyk/*', require( "./api/cmyk" ) );
 app.get( '/lab/*', require( "./api/lab" ) );
 
 
+// lab endpoint
+app.get( '/hsv/*', require( "./api/hsv" ) );
+
+
 // catch-all invalid endpoint response
 app.get( '*', function( req, res ){
 	res.send( "invalid endpoint" );
