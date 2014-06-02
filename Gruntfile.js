@@ -48,16 +48,8 @@ module.exports = function(grunt) {
                     ]
                 }
             }
-        },
-
-        release: {
-            options: {
-                github: { 
-                    repo: 'jpederson/colorvert', //put your user/repo here
-                }
-            }
         }
-
+        
     });
 
     // register task
