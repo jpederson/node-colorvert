@@ -1,6 +1,6 @@
 {
   "name": "colorvert",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Node universal color conversion tool.",
   "main": "colorvert.js",
   "repository": {
