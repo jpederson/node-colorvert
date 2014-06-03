@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git://github.com/jpederson/colorvert.git"
   },
+  "scripts": {
+    "test": "node_modules/.bin/mocha -w"
+  },
   "keywords": [
     "color",
     "conversion",
@@ -23,5 +26,9 @@
   "homepage": "https://github.com/jpederson/colorvert",
   "dependencies": {
     "transicc": "~1.0.4"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": ">= 0.0.1"
   }
 }

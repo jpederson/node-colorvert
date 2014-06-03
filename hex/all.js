@@ -1,11 +1,13 @@
 
 
-var hex_to_rgb  = require( "./rgb" ),
-	rgb_to_cmyk = require( "../rgb/cmyk" ),
-	rgb_to_xyz  = require( "../rgb/xyz" ),
-	rgb_to_lab  = require( "../rgb/lab" ),
-	rgb_to_hsv  = require( "../rgb/hsv" ),
-	rgb_to_hsl  = require( "../rgb/hsl" );
+var hex_to_rgb   = require( "./rgb" ),
+	rgb_to_cmyk  = require( "../rgb/cmyk" ),
+	rgb_to_xyz   = require( "../rgb/xyz" ),
+	rgb_to_lab   = require( "../rgb/lab" ),
+	rgb_to_hsv   = require( "../rgb/hsv" ),
+	rgb_to_hsl   = require( "../rgb/hsl" ),
+	hex_invert   = require( "./invert" ),
+	hex_readable = require( "./readable" );
 
 
 // convert hex to all other color formats
@@ -28,6 +30,8 @@ module.exports = function( hex, callback ){
 					"cmyk": cmyk,
 					"lab": lab,
 					"hex": hex,
+					"hex_inverted": hex_invert( hex ),
+					"hex_readable": hex_readable( hex ),
 					"hsl": rgb_to_hsl( rgb.r, rgb.g, rgb.b ),
 					"hsv": rgb_to_hsv( rgb.r, rgb.g, rgb.b ),
 					"rgb": rgb,

@@ -1,11 +1,13 @@
 
 
-var hsv_to_rgb  = require( "./rgb" ),
-	rgb_to_cmyk = require( "../rgb/cmyk" ),
-	rgb_to_xyz  = require( "../rgb/xyz" ),
-	rgb_to_lab  = require( "../rgb/lab" ),
-	rgb_to_hex  = require( "../rgb/hex" ),
-	rgb_to_hsl  = require( "../rgb/hsl" );
+var hsv_to_rgb   = require( "./rgb" ),
+	rgb_to_cmyk  = require( "../rgb/cmyk" ),
+	rgb_to_xyz   = require( "../rgb/xyz" ),
+	rgb_to_lab   = require( "../rgb/lab" ),
+	rgb_to_hex   = require( "../rgb/hex" ),
+	rgb_to_hsl   = require( "../rgb/hsl" ),
+	hex_invert   = require( "../hex/invert" ),
+	hex_readable = require( "../hex/readable" );
 
 
 // convert HSV to all other color formats
@@ -23,11 +25,16 @@ module.exports = function( h, s, v, callback ){
 			// convert to Lab using transicc
 			rgb_to_lab( rgb.r, rgb.g, rgb.b, function( lab ){
 
+				// grab the hex
+				var hex = rgb_to_hex( rgb.r, rgb.g, rgb.b );
+
 				// build the response object
 				var response = {
 					"cmyk": cmyk,
 					"lab": lab,
-					"hex": rgb_to_hex( rgb.r, rgb.g, rgb.b ),
+					"hex": hex,
+					"hex_inverted": hex_invert( hex ),
+					"hex_readable": hex_readable( hex ),
 					"hsl": rgb_to_hsl( rgb.r, rgb.g, rgb.b ),
 					"hsv": {
 						"h": h,
