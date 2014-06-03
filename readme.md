@@ -1,4 +1,4 @@
-## colorvert
+## colorvert [![NPM version](https://badge.fury.io/js/colorvert.svg)](http://badge.fury.io/js/colorvert)
 
 An easy-to-use color conversion module written for node. Uses the `transicc` node module to provide ICC profile-based color conversions between several color spaces spaces. 
 
