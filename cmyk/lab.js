@@ -6,7 +6,7 @@ var transicc = require( "transicc" );
 // convert from CMYK to Lab using transicc
 module.exports = function( c, m, y, k, callback ){
 
-	transicc( "cmyk", "lab", [ c, m, y, k ], function( lab ){
+	transicc( "adobe/ISOcoated_v2_300_bas", "lab", [ c, m, y, k ], function( lab ){
 
 		// construct Lab response
 		var response = {

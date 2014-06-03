@@ -6,7 +6,7 @@ var transicc = require( "transicc" );
 // convert from CMYK to XYZ using transicc
 module.exports = function( c, m, y, k, callback ){
 
-	transicc( "cmyk", "xyz-d65", [ c, m, y, k ], function( xyz ){
+	transicc( "adobe/ISOcoated_v2_300_bas", "xyz-d65", [ c, m, y, k ], function( xyz ){
 
 		// construct XYZ response
 		var response = {
