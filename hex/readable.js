@@ -1,17 +1,17 @@
 
 
+var hex_to_rgb = require( "./rgb" );
+
 module.exports = function( hex ){
 
-	// remove the #
+	// ditch the #
 	hex = hex.replace( /#/g, "" );
 
 	// determine RGB values
-	var r = parseInt(hex.substr(0,2),16);
-	var g = parseInt(hex.substr(2,2),16);
-	var b = parseInt(hex.substr(4,2),16);
+	var rgb = hex_to_rgb( hex );
 
 	// compare them
-	var yiq = ( ( r * 299 ) + ( g * 587) + ( b * 114 ) ) / 1000;
+	var yiq = ( ( rgb.r * 299 ) + ( rgb.g * 587) + ( rgb.b * 114 ) ) / 1000;
 
 	// return the right color
 	return ( yiq >= 128 ) ? '#000000' : '#ffffff';
