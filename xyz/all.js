@@ -1,7 +1,7 @@
 
 
 var xyz_to_cmyk = require( "./cmyk" ),
-	xyz_to_lab  = require( "./xyz" ),
+	xyz_to_lab  = require( "./lab" ),
 	xyz_to_rgb  = require( "./rgb" ),
 	rgb_to_hex  = require( "../rgb/hex" ),
 	rgb_to_hsl  = require( "../rgb/hsl" ),
