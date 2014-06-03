@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/jpederson/colorvert",
   "dependencies": {
-    "transicc": "~1.0.4"
+    "transicc": "~1.0.5"
   },
   "devDependencies": {
     "mocha": "*",
