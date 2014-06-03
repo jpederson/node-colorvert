@@ -1,18 +1,19 @@
 
 
-var hex_to_rgb = require( "./rgb" );
-
 module.exports = function( hex ){
-	
-	// convert to RGB quick.
-	var rgb = hex_to_rgb( hex );
 
-	// use RGB values to select optimum text color with the maths.
-	if ( ( rgb.r * 0.299 + rgb.g * 0.587 + rgb.b * 0.114 ) > 186 ){
-		return "#000000";
-	} else { 
-		return "#ffffff";
-	}
+	// remove the #
+	hex = hex.replace( /#/g, "" );
 
+	// determine RGB values
+	var r = parseInt(hex.substr(0,2),16);
+	var g = parseInt(hex.substr(2,2),16);
+	var b = parseInt(hex.substr(4,2),16);
+
+	// compare them
+	var yiq = ( ( r * 299 ) + ( g * 587) + ( b * 114 ) ) / 1000;
+
+	// return the right color
+	return ( yiq >= 128 ) ? '#000000' : '#ffffff';
 }
 
