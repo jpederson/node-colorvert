@@ -1,6 +1,6 @@
 {
   "name": "colorvert",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Node universal color conversion tool.",
   "main": "colorvert.js",
   "repository": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/jpederson/colorvert",
   "dependencies": {
-    "transicc": "~1.0.3"
+    "transicc": "~1.0.4"
   }
 }
