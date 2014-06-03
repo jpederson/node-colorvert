@@ -6,6 +6,7 @@ var lab_to_cmyk = require( "./cmyk" ),
 	rgb_to_lab  = require( "../rgb/lab" ),
 	rgb_to_hex  = require( "../rgb/hex" ),
 	rgb_to_hsl  = require( "../rgb/hsl" ),
+	rgb_to_hsv  = require( "../rgb/hsv" ),
 	hex_invert  = require( "../hex/invert" ),
 	hex_readable= require( "../hex/readable" );
 
