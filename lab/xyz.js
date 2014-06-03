@@ -3,11 +3,10 @@
 var transicc = require( "transicc" );
 
 
-// convert from CMYK to RGB using transicc
+// convert from CMYK to XYZ using transicc
 module.exports = function( l, a, b, callback ){
 
-	// initiate the command, and an empty response object
-	transicc( "lab", "xyz-d65", [ l, a, b ], function( xyz ){
+	transicc( "lab", "xyz", [ l, a, b ], function( xyz ){
 
 		// construct a response
 		var response = {

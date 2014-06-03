@@ -6,7 +6,7 @@ var transicc = require( "transicc" );
 // convert from CMYK to RGB using transicc
 module.exports = function( c, m, y, k, callback ){
 
-	transicc( "adobe/ISOcoated_v2_300_bas", "rgb", [ c, m, y, k ], function( rgb ){
+	transicc( "cmyk", "rgb", [ c, m, y, k ], function( rgb ){
 
 		// construct RGB response
 		var response = {

@@ -6,7 +6,7 @@ var transicc = require( "transicc" );
 // convert from XYZ to RGB using transicc
 module.exports = function( x, y, z, callback ){
 
-	transicc( "xyz-d65", "rgb", [ x, y, z ], function( rgb ){
+	transicc( "xyz", "rgb", [ x, y, z ], function( rgb ){
 
 		// construct a response
 		var response = {
