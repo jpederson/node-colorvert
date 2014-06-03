@@ -59,3 +59,13 @@ exports.rgb_to_lab  = require( "./rgb/lab" );
 exports.rgb_to_xyz  = require( "./rgb/xyz" );
 exports.rgb_to_all  = require( "./rgb/all" );
 
+
+// XYZ
+exports.xyz_to_cmyk = require( "./xyz/cmyk" );
+exports.xyz_to_hex  = require( "./xyz/hex" );
+exports.xyz_to_hsl  = require( "./xyz/hsl" );
+exports.xyz_to_hsv  = require( "./xyz/hsv" );
+exports.xyz_to_lab  = require( "./xyz/lab" );
+exports.xyz_to_rgb  = require( "./xyz/rgb" );
+exports.xyz_to_all  = require( "./xyz/all" );
+
