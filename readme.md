@@ -8,7 +8,7 @@ Otherwise, you found the right module! This one also supports Hex, HSL, and HSV,
 
 ### Installation Requirements
 
-You must first install LittleCMS, an open source Python library for converting colors using ICC profiles. This shell script will get you there.
+You must first install LittleCMS, an open source library written mostly in C for converting colors using ICC profiles. This shell script will get you there.
 
 ```shell
 git clone https://github.com/mm2/Little-CMS.git
