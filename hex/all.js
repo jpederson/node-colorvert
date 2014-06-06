@@ -13,6 +13,8 @@ var hex_to_rgb   = require( "./rgb" ),
 // convert hex to all other color formats
 module.exports = function( hex, callback ){
 
+	hex = hex.replace( /#/g, "" );
+
 	// convert to RGB first
 	var rgb = hex_to_rgb( hex );
 
@@ -29,7 +31,7 @@ module.exports = function( hex, callback ){
 				var response = {
 					"cmyk": cmyk,
 					"lab": lab,
-					"hex": hex,
+					"hex": "#"+hex,
 					"hex_inverted": hex_invert( hex ),
 					"hex_readable": hex_readable( hex ),
 					"hsl": rgb_to_hsl( rgb.r, rgb.g, rgb.b ),
