@@ -8,7 +8,7 @@
     "url": "git://github.com/jpederson/colorvert.git"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha -w"
+    "test": "node_modules/.bin/mocha -w -R spec"
   },
   "keywords": [
     "color",
@@ -25,10 +25,10 @@
   },
   "homepage": "https://github.com/jpederson/colorvert",
   "dependencies": {
-    "transicc": "~1.0.5"
+    "transicc": ">=1.1.0"
   },
   "devDependencies": {
     "mocha": "*",
-    "should": ">= 0.0.1"
+    "should": "*"
   }
 }
