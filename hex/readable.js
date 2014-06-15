@@ -4,7 +4,7 @@ var hex_to_rgb = require( "./rgb" );
 
 module.exports = function( hex ){
 
-	// ditch the #
+	// clean the hex input
 	hex = hex.replace( /#/g, "" );
 
 	// determine RGB values

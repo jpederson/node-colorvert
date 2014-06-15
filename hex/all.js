@@ -13,19 +13,22 @@ var hex_to_rgb   = require( "./rgb" ),
 // convert hex to all other color formats
 module.exports = function( hex, callback ){
 
+	// clean the hex input
 	hex = hex.replace( /#/g, "" );
+
+	console.log( hex );
 
 	// convert to RGB first
 	var rgb = hex_to_rgb( hex );
 
 	// convert to CMYK using transicc
-	rgb_to_cmyk( rgb.r, rgb.g, rgb.b, function( cmyk ){
+	rgb_to_cmyk( rgb.r, rgb.g, rgb.b, function( err, cmyk ){
 
 		// convert to XYZ using transicc
-		rgb_to_xyz( rgb.r, rgb.g, rgb.b, function( xyz ){
+		rgb_to_xyz( rgb.r, rgb.g, rgb.b, function( err, xyz ){
 
 			// convert to Lab using transicc
-			rgb_to_lab( rgb.r, rgb.g, rgb.b, function( lab ){
+			rgb_to_lab( rgb.r, rgb.g, rgb.b, function( err, lab ){
 
 				// build the response object
 				var response = {
@@ -41,7 +44,7 @@ module.exports = function( hex, callback ){
 				};
 
 				// send the response to the browser
-				callback( response );
+				callback( err, response );
 
 			});
 

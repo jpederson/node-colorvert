@@ -1,7 +1,7 @@
 
 
 // convert RGB to HSV
-module.exports = function(r, g, b) {
+module.exports = function( r, g, b ) {
 
     var min = Math.min(r, g, b),
         max = Math.max(r, g, b),

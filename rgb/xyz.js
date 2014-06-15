@@ -6,7 +6,11 @@ var transicc = require( "transicc" );
 // convert from RGB to XYZ using transicc
 module.exports = function( r, g, b, callback ){
 
-	transicc( "rgb", "xyz", [ r, g, b ], function( xyz ){
+	if ( isNaN( r ) || isNaN( g ) || isNaN( b ) ) {
+		return callback( "ERROR: Please provide valid R, G, and B values." );
+	}
+
+	transicc( "rgb", "xyz", [ r, g, b ], function( err, xyz ){
 
 		// construct a response
 		var response = {
@@ -16,7 +20,7 @@ module.exports = function( r, g, b, callback ){
 		};
 		
 		// feed it into the callback
-		callback( response );
+		callback( err, response );
 
 	});
 

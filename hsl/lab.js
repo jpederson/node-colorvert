@@ -7,14 +7,18 @@ var hsl_to_rgb = require( "./rgb" ),
 // convert HSL to Lab
 module.exports = function( h, s, l, callback ){
 
+	if ( isNaN( h ) || isNaN( s ) || isNaN( l ) ) {
+		return callback( new Error( 'ERROR: Please provide valid H, S, and L values.' ), null );
+	}
+
     // convert HSL to RGB
     var rgb = hsl_to_rgb( h, s, l );
 
     // then RGB to Lab
-    rgb_to_lab( rgb.r, rgb.g, rgb.b, function( lab ){
+    rgb_to_lab( rgb.r, rgb.g, rgb.b, function( err, lab ){
 
     	// pass it into the callback function
-    	callback( lab );
+    	callback( err, lab );
 
     });
 

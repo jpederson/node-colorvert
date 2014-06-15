@@ -6,7 +6,12 @@ var transicc = require( "transicc" );
 // convert from CMYK to Lab using transicc
 module.exports = function( c, m, y, k, callback ){
 
-	transicc( "cmyk", "lab", [ c, m, y, k ], function( lab ){
+	if ( isNaN( c ) || isNaN( m ) || isNaN( y ) || isNaN( k ) ) {
+		callback( "ERROR: Please provide valid C, M, Y, and K values." );
+		return;
+	}
+
+	transicc( "cmyk", "lab", [ c, m, y, k ], function( err, lab ){
 
 		// construct Lab response
 		var response = {
@@ -16,7 +21,7 @@ module.exports = function( c, m, y, k, callback ){
 		};
 
 		// pass it to the callback function
-		callback( response );
+		callback( err, response );
 	
 	});
 

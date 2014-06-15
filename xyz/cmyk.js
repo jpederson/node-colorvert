@@ -6,7 +6,12 @@ var transicc = require( "transicc" );
 // convert from XYZ to CMYK using transicc
 module.exports = function( x, y, z, callback ){
 
-	transicc( "xyz", "cmyk", [ x, y, z ], function( cmyk ){
+	if ( isNaN( x ) || isNaN( y ) || isNaN( z ) ) {
+		callback( "ERROR: Please provide valid X, Y, and Z values." );
+		return;
+	}
+
+	transicc( "xyz", "cmyk", [ x, y, z ], function( err, cmyk ){
 
 		// construct a response
 		var response = {
@@ -17,7 +22,7 @@ module.exports = function( x, y, z, callback ){
 		};
 		
 		// pass it into the callback
-		callback( response );
+		callback( err, response );
 
 	});
 

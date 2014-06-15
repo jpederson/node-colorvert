@@ -14,14 +14,18 @@ var lab_to_cmyk = require( "./cmyk" ),
 // convert HSV to all other color formats
 module.exports = function( l, a, b, callback ){
 
+	if ( isNaN( l ) || isNaN( a ) || isNaN( b ) ) {
+		return callback( new Error( 'ERROR: Please provide valid L, a, and b values.' ), null );
+	}
+
 	// convert to rgb using transicc
-	lab_to_cmyk( l, a, b, function( cmyk ){
+	lab_to_cmyk( l, a, b, function( err, cmyk ){
 
 		// convert to lab using transicc
-		lab_to_xyz( l, a, b, function( xyz ){
+		lab_to_xyz( l, a, b, function( err, xyz ){
 
 			// convert to lab using transicc
-			lab_to_rgb( l, a, b, function( rgb ){
+			lab_to_rgb( l, a, b, function( err, rgb ){
 
 				// grab the hex value
 				var hex = rgb_to_hex( rgb.r, rgb.g, rgb.b );
@@ -44,7 +48,7 @@ module.exports = function( l, a, b, callback ){
 				};
 
 				// send the response to the browser
-				callback( response );
+				callback( err, response );
 
 			});
 

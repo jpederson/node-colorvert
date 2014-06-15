@@ -13,6 +13,10 @@ var hsv_to_rgb   = require( "./rgb" ),
 // convert HSV to all other color formats
 module.exports = function( h, s, v, callback ){
 
+	if ( isNaN( h ) || isNaN( s ) || isNaN( v ) ) {
+		return callback( new Error( 'ERROR: Please provide valid H, S, and V values.' ), null );
+	}
+
 	// convert to RGB first
 	var rgb = hsv_to_rgb( h, s, v );
 

@@ -34,7 +34,7 @@ var cvert = require( "colorvert" );
 
 // CMYK, XYZ, and Lab-based conversions require
 // you to provide a callback function.
-cvert.cmyk_to_rgb( 100, 0, 0, 0, function( rgb ){
+cvert.cmyk_to_rgb( 100, 0, 0, 0, function( err, rgb ){
 	console.log( rgb );
 });
 
@@ -52,7 +52,7 @@ If you only need to convert from one color to another, just include that specifi
 ```js
 var cmyk_to_hex = require( "colorvert/cmyk/hex" );
 
-cmyk_to_hex( 100, 0, 0, 0, function( hex ){
+cmyk_to_hex( 100, 0, 0, 0, function( err, hex ){
 	console.log( hex );
 });
 ```
@@ -64,9 +64,9 @@ cmyk_to_hex( 100, 0, 0, 0, function( hex ){
 These conversions require us to use the `transicc` node module that interacts with a command line utility. As a result, we have to wait for the response before doing anything with it, so you must provide a callback when converting **to or from** any of these formats. Here's an example:
 
 ```js
-cvert.cmyk_to_rgb( 100, 0, 0, 0, function( rgb ){
+cvert.cmyk_to_rgb( 100, 0, 0, 0, function( err, rgb ){
 	console.log( rgb );
-})
+});
 ```
 
 *****

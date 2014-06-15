@@ -6,7 +6,12 @@ var transicc = require( "transicc" );
 // convert from CMYK to RGB using transicc
 module.exports = function( c, m, y, k, callback ){
 
-	transicc( "cmyk", "rgb", [ c, m, y, k ], function( rgb ){
+	if ( isNaN( c ) || isNaN( m ) || isNaN( y ) || isNaN( k ) ) {
+		callback( "ERROR: Please provide valid C, M, Y, and K values." );
+		return;
+	}
+
+	transicc( "cmyk", "rgb", [ c, m, y, k ], function( err, rgb ){
 
 		// construct RGB response
 		var response = {
@@ -16,7 +21,7 @@ module.exports = function( c, m, y, k, callback ){
 		};
 
 		// pass it to the callback function
-		callback( response );
+		callback( err, response );
 	
 	});
 
