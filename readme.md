@@ -84,7 +84,7 @@ console.log( hex );
 
 ### Convert to ALL Other Colorspaces
 
-Each of the colorspaces includes a module that converts to all other colorspaces. Use it like so:
+Each of the colorspaces includes a module that converts to all other colorspaces. As a bonus, the output will also include the hex code of the inverted color, and will suggest the most readable text color to display over the input color. Use it like so:
 
 ```js
 cvert.cmyk_to_all( 100, 0, 0, 0, function( err, all ){
@@ -135,4 +135,4 @@ cvert.cmyk_to_all( 100, 0, 0, 0, function( err, all ){
 
 ### Warning! :)
 
-This and the colorvert API module are still under development. They currently function for perfect input, but as soon as an empty/invalid value is passed, things fall apart, so I have to do some input testing/error reporting and write thorough tests before anyone should use it. You've been warned :) Otherwise, feel free to run it locally if you need to batch convert colors and you know the input will be valid!
+This module has been pretty reliable during all my tests and with everything I've thrown at it. That said, I haven't written tests for everything yet, so be sure to test it in your environment and with your input - if you find any issues, please post them on Github or submit a pull request!
