@@ -40,7 +40,7 @@ cvert.cmyk_to_rgb( 100, 0, 0, 0, function( err, rgb ){
 
 // RGB, HSL, HSV, and hex conversions simply 
 // return values.
-var hex = cvert.rgb_to_hex( 0, 146, 210 );
+var hex = cvert.rgb_to_hex( 0, 172, 236 );
 ```
 
 *****

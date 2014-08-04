@@ -7,7 +7,8 @@ var transicc = require( "transicc" );
 module.exports = function( c, m, y, k, callback ){
 
 	if ( isNaN( c ) || isNaN( m ) || isNaN( y ) || isNaN( k ) ) {
-		callback( "ERROR: Please provide valid C, M, Y, and K values." );
+		var error = new Error( "ERROR: Please provide valid C, M, Y, and K values.", 'error' )
+		callback( error, null );
 		return;
 	}
 
