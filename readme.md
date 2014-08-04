@@ -1,8 +1,8 @@
 ## colorvert [![NPM version](https://badge.fury.io/js/colorvert.svg)](http://badge.fury.io/js/colorvert)
 
-An easy-to-use color conversion module written for node. Uses the [transicc](https://github.com/jpederson/node-transicc) node module to provide ICC profile-based color conversions between several color spaces. If you only need conversions between ICC profiles (CMYK, Lab, XYZ, and RGB), look to that module.
+This node module converts colors between CMYK, Lab, XYZ, RGB, HSL, HSV, and Hex colorspaces. Colorvert uses the [transicc](https://github.com/jpederson/node-transicc) node module to provide ICC profile-based color conversions between several color spaces. If you only need conversions between ICC profiles (CMYK, Lab, XYZ, and RGB), look to that module.
 
-Otherwise, you found the right module! This one also supports Hex, HSL, and HSV, so you can convert between web, print, and display colorspaces.
+*For a JSON HTTP API:* Check out the [colorvert-api](https://github.com/jpederson/node-colorvert-api) node module. It uses this module and [express](https://github.com/strongloop/express) to serve HTTP endpoints that convert the input color to all other colorspaces. It's ideal for batch color conversions.
 
 *****
 
@@ -78,6 +78,57 @@ If you're converting between RGB, HSL, HSV, or hex, the functions will simply re
 ```js
 var hex = cvert.rgb_to_hex( 0, 146, 210 );
 console.log( hex );
+```
+
+*****
+
+### Convert to ALL Other Colorspaces
+
+Each of the colorspaces includes a module that converts to all other colorspaces. Use it like so:
+
+```js
+cvert.cmyk_to_all( 100, 0, 0, 0, function( err, all ){
+	console.log( all );
+	/*
+	Outputs:
+	{
+		"cmyk": {
+			"c": "100",
+			"m": "0",
+			"y": "0",
+			"k": "0"
+		},
+		"lab": {
+			"l": 59,
+			"a": -37,
+			"b": -49
+		},
+		"hex": "#00a0e0",
+		"hex_inverted": "#ff5f1f",
+		"hex_readable": "#ffffff",
+		"hsl": {
+			"h": 197,
+			"s": 100,
+			"l": 43
+		},
+		"hsv": {
+			"h": 197,
+			"s": 100,
+			"v": 87
+		},
+		"rgb": {
+			"r": 0,
+			"g": 160,
+			"b": 224
+		},
+		"xyz": {
+			"x": 52,
+			"y": 71,
+			"z": 197
+		}
+	}
+	*/
+});
 ```
 
 *****
