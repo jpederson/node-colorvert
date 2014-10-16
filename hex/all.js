@@ -16,8 +16,6 @@ module.exports = function( hex, callback ){
 	// clean the hex input
 	hex = hex.replace( /#/g, "" );
 
-	console.log( hex );
-
 	// convert to RGB first
 	var rgb = hex_to_rgb( hex );
 
