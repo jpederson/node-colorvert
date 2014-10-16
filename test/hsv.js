@@ -1,0 +1,147 @@
+
+
+var cvert = require( "../colorvert" ),
+	should = require( "should" );
+
+describe('Test Conversions: HSV', function(){
+
+
+	// Test the CMYK conversion
+	describe('to CMYK', function () {
+
+		it('should convert hsv( 196, 100, 92 ) to cmyk( 95, 3, 4, 0 )', function ( done ) {
+
+			cvert.hsv_to_cmyk( 196, 100, 92, function( err, response ) {
+
+				// throw an error if it exists
+				if ( err ) throw err;
+
+				// test the response
+				response.c.should.equal( 95 );
+				response.m.should.equal( 3 );
+				response.y.should.equal( 4 );
+				response.k.should.equal( 0 );
+
+				// finished with the test.
+				done();
+
+			});
+
+		});
+
+	});
+
+
+
+	// Test the Lab conversion
+	describe('to Lab', function () {
+
+		it('should convert hsl( 196, 100, 46 ) to lab( 63, -39, -49 )', function ( done ) {
+
+			cvert.hsl_to_lab( 196, 100, 46, function( err, response ) {
+
+				// throw an error if it exists
+				if ( err ) throw err;
+
+				// test the response
+				response.l.should.equal( 63 );
+				response.a.should.equal( -39 );
+				response.b.should.equal( -48 );
+
+				// finished with the test.
+				done();
+
+			});
+
+		});
+
+	});
+
+
+
+	// Test the RGB conversion
+	describe('to XYZ', function () {
+
+		it('should convert hsl( 196, 100, 46 ) to xyz( 60, 83, 221 )', function ( done ) {
+
+			cvert.hsl_to_xyz( 196, 100, 46, function( err, response ) {
+
+				// throw an error if it exists
+				if ( err ) throw err;
+
+				// test the response
+				response.x.should.equal( 60 );
+				response.y.should.equal( 83 );
+				response.z.should.equal( 219 );
+
+				// finished with the test.
+				done();
+
+			});
+
+		});
+
+	});
+
+
+
+	// Test the HSL conversion
+	describe('to RGB', function () {
+
+		it('should convert hsl( 196, 100, 46 ) to rgb( 0, 172, 235 )', function ( done ) {
+
+			var response = cvert.hsl_to_rgb( 196, 100, 46 );
+
+			// test the response
+			response.r.should.equal( 0 );
+			response.g.should.equal( 172 );
+			response.b.should.equal( 235 );
+
+			// finished with the test.
+			done();
+
+		});
+
+	});
+
+
+	// Test the HSV conversion
+	describe('to HSL', function () {
+
+		it('should convert hsv( 196, 100, 92 ) to hsl( 196, 100, 46 )', function ( done ) {
+
+			var response = cvert.hsv_to_hsl( 196, 100, 92 );
+
+			// test the response
+			response.h.should.equal( 196 );
+			response.s.should.equal( 100 );
+			response.l.should.equal( 46 );
+
+			// finished with the test.
+			done();
+
+		});
+
+	});
+
+
+	// Test the Hex Conversion
+	describe('to Hex', function () {
+
+		it('should convert hsl( 196, 100, 46 ) to hex( #00a0e0 )', function ( done ) {
+
+			var response = cvert.rgb_to_hex( 0, 172, 236);
+
+			// check the response.
+			response.should.equal( "#00acec" );
+
+			// test finished
+			done();
+
+		});
+
+	});
+
+
+});
+

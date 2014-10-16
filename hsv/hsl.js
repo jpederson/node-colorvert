@@ -1,5 +1,9 @@
 
 
+var hsv_to_rgb = require( "./rgb" ),
+	rgb_to_hsl = require( "../rgb/hsl" );
+
+
 // convert HSV to HSL
 module.exports = function( h, s, v ){
 
