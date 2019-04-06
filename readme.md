@@ -1,8 +1,12 @@
-## colorvert [![NPM version](https://badge.fury.io/js/colorvert.svg)](http://badge.fury.io/js/colorvert)
+## colorvert
 
 This node module converts colors between CMYK, Lab, XYZ, RGB, HSL, HSV, and Hex colorspaces. Colorvert uses the [transicc](https://github.com/jpederson/node-transicc) node module to provide ICC profile-based color conversions between several color spaces. If you only need conversions between ICC profiles (CMYK, Lab, XYZ, and RGB), look to that module.
 
 *For a JSON HTTP API:* Check out the [colorvert-api](https://github.com/jpederson/node-colorvert-api) node module. It uses this module and [express](https://github.com/strongloop/express) to serve HTTP endpoints that convert the input color to all other colorspaces. It's ideal for batch color conversions.
+
+*****
+
+![GitHub release](https://img.shields.io/github/release/jpederson/node-colorvert.svg?label=github) ![npm](https://img.shields.io/npm/v/colorvert.svg)
 
 *****
 
