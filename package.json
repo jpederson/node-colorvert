@@ -28,7 +28,7 @@
     "transicc": "~1.2.1"
   },
   "devDependencies": {
-    "mocha": "*",
+    "mocha": "^6.2.2",
     "should": "*"
   }
 }
